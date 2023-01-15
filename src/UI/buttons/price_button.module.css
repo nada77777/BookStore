@@ -1,0 +1,8 @@
+.priceButton {
+    /* background-color: ; */
+    border: 2px solid var(--basic-color);
+    color: var(--basic-color);
+    border-radius: 5px;
+    padding: 2px 15px;
+    font-weight: var(--weight-bold);
+}

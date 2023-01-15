@@ -1,0 +1,6 @@
+.cartButton {
+    background-color: var(--basic-color);
+    color: white;
+    border-radius: 30px;
+    font-weight: var(--weight-bold);
+}

@@ -1,0 +1,9 @@
+.bookItems {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listItem {
+    flex-basis: 20%;
+    padding: calc(var(--size-big) + 10px);
+}

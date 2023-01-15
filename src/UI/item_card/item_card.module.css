@@ -1,0 +1,32 @@
+.itemCard .itemInner {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemInner .itemImg {
+    width: 100%;
+    height: 280px;
+}
+
+.itemCard .itemInfo {
+    padding: 5px;
+}
+
+.itemInner:hover {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.itemInner .title {
+    font-size: var(--size-medium);
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.itemInner .author {
+    padding: 5px 0;
+    font-size: var(--size-small);
+    color: var(--color-opacity);
+}

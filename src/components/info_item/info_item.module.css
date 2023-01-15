@@ -1,0 +1,111 @@
+.infoItem {
+    display: flex;
+    margin-bottom: var(--space-max);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* .info .title,
+.info .author,
+.info .price,
+.info .description {
+    margin-bottom: 10px;
+} */
+
+.infoItemImg {
+    margin-right: var(--space-max);
+    width: 190px;
+    border: 1px solid black;
+}
+
+.infoItemImg img {
+    display: block;
+}
+
+
+.info .title {
+    font-size: var(--size-big);
+}
+
+.info .author {
+    font-weight: var(--weight-medium);
+}
+
+
+
+.info .description {
+    white-space: pre-wrap;
+}
+
+.info .price {
+    font-weight: var(--weight-medium);
+    display: flex;
+    align-items: center;
+}
+
+.info .price .priceStandard {
+    text-decoration: line-through;
+}
+
+.info .price .infoPriceButton {
+    padding: var(--space-min) var(--space-big);
+    margin: 0 var(--space-min);
+}
+
+.buttons {
+    margin-top: var(--size-big);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.buttons .minus,
+.buttons .plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #a0a0a0;
+    font-size: 25px;
+}
+
+.buttons .number {
+    padding: var(--space-medium);
+    border-radius: 25px;
+    margin: 0 var(--space-min);
+    border: 1px solid black;
+}
+
+.infoCartButton {
+    padding: 15px 20px;
+    margin-left: var(--space-max);
+}
+
+
+/* <div className={styles.infoItem}>
+<div className={styles.infoItemImg}>
+    <img src={props.item.coverLargeUrl} alt="info_img" />
+</div>
+<div className={styles.info}>
+    <h1 className={styles.title}>{props.item.title}</h1>
+    <p className={styles.author}>Author: {props.item.author}</p>
+    <div className={styles.price}>
+        <span className={styles.priceStandard}>{props.item.priceStandard}</span>
+        <PriceButton price={props.item.priceSales} />
+    </div>
+    <pre className={styles.description}>
+        {props.item.description}
+    </pre>
+</div>
+<div>
+    <button>-</button>
+    <button>number</button>
+    <button>+</button>
+</div>
+</div> */
