@@ -7,9 +7,9 @@ import BookItems from '../../components/book_items/book_items';
 const MainPage = (props) => {
     const [items, setItems] = useState([]);
     const getInfo = () => {
-        fetch('data/popular/popular_book.json')//
+        fetch('data/popular/rere.json')//
             .then(response => response.json())//
-            .then(result => setItems(result.items));
+            .then(result => setItems(result.items.slice(0, 15)));
         console.log('fetch');
     };
 

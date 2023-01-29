@@ -1,4 +1,5 @@
 .itemCard .itemInner {
+    width: 190px;
     display: flex;
     flex-direction: column;
 }
@@ -10,9 +11,16 @@
 
 .itemCard .itemInfo {
     padding: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.itemInner:hover {
+.itemInner:hover,
+.itemInner:hover .hover {
+    visibility: visible;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
@@ -28,5 +36,27 @@
 .itemInner .author {
     padding: 5px 0;
     font-size: var(--size-small);
-    color: var(--color-opacity);
+    /* color: var(--color-opacity); */
+}
+
+.hover {
+    z-index: 1;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* justify-content: center; */
+    /* align-items: center; */
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.hoverEffect {
+    padding: 12px 20px;
 }

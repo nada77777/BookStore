@@ -8,13 +8,13 @@ const Header = (props) => {
     const navigate = useNavigate();
     const onClick = (event) => {
         event.preventDefault();
-        navigate('/bookList', { state: { name: event.target.name } });
+        navigate(`/bookList`, { state: { name: event.target.name } });
         console.log(event.target.name);
     }
     return (
         <header>
             <div className={styles.headerTop}>
-                <span className={styles.logo}><ImBook /> BOOKSHOP</span>
+                <span onClick={() => navigate('/')} className={styles.logo}><ImBook /> BOOKSHOP</span>
                 <form className={styles.form}>
                     <span className={styles.searchIcon}><AiOutlineSearch /></span>
                     <input type="text" />
@@ -26,9 +26,9 @@ const Header = (props) => {
             </div>
             <div className={styles.headerBottom}>
                 <nav className={styles.nav}>
-                    <li><a href=" ">Home</a></li>
+                    <li><a name='home' href=" " onClick={() => navigate('/')}>Home</a></li>
                     <li><a name='books' onClick={onClick} href=" ">Books</a></li>
-                    <li><a name='magazines' onClick={onClick} href=" ">Magazines</a></li>
+                    <li><a name='magazine' onClick={onClick} href=" ">Magazines</a></li>
                     <li><a name='album' onClick={onClick} href=" ">Album</a></li>
                     <li><a name='recommended' onClick={onClick} href=" ">Recommended</a></li>
                 </nav>

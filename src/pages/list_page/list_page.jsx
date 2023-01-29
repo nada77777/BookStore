@@ -5,16 +5,18 @@ import styles from './list_page.module.css';
 const ListPage = (props) => {
     const [bookItems, setBookItems] = useState([]);
     const pageTitle = useLocation().state.name;
+
+    console.log(bookItems);
     useEffect(() => {
-        fetch('data/all/all.json')//
+        fetch(`data/popular/${pageTitle}.json`)//
             .then(response => response.json())//
             .then(result => setBookItems(result.items));
-    }, [])
+    }, [pageTitle]);
     return (
         <section className={styles.listPage}>
-            <h1>{pageTitle}</h1>
+            <h1 className={styles.title}>{pageTitle.toUpperCase()}</h1>
             <ul className={styles.bookItems}>
-                {bookItems.map((item) => <ItemCard key={item.itemId} style={styles.listItem} item={item} />)}
+                {bookItems && bookItems.map((item) => <ItemCard key={item.itemId} style={styles.listItem} item={item} />)}
             </ul>
         </section>
     );

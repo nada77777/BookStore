@@ -1,3 +1,7 @@
+.listPage .title {
+    margin-top: var(--space-max);
+}
+
 .bookItems {
     display: flex;
     flex-wrap: wrap;

@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from './cart_page.module.css';
-import CartItem from '../../components/cart_item/cart_item';
-import { UseCartContext } from '../../context/cart_context';
+import { createContext, useContext, useReducer, useState } from "react";
+import { cartReducer } from "../reducer/cart_reducer";
 
-const CartPage = (props) => {
-    // const items = [{
+const CartContext = createContext();
+
+export function CartContextProvider({ children }) {
+    // const [cartItems, setCartItems] = useState([{
     //     "itemId": 353607384,
     //     "title": "1억 원대로 집 짓기: 건축탐구 집 - DVD",
     //     "description": "",
@@ -53,38 +53,33 @@ const CartPage = (props) => {
     //     "mobileLink": "http://m.book.interpark.com/view.html?PRD_NO=352870422&SHOP_NO=0000500000&SUB_CATE=2004",
     //     "additionalLink": "http://book.interpark.com/gate/ippgw.jsp?goods_no=352870422&biz_cd=",
     //     "reviewCount": 0
-    // }]
-    const { cartContext: { cartItems, totalPrice }, addItem, deleteItem } = UseCartContext();
-    console.log(cartItems.length);
-    return (
-        <section className={styles.cartPage}>
-            <h1>cart page</h1>
-            {cartItems.length < 1 ?
-                <h1 className={styles.cartNotice}>현재 장바구니에 상품이 없습니다.</h1>
-                :
-                <>
-                    <ul className={styles.itemContainer}>
-                        <div className={styles.itemTitle}>
-                            <h1>ITEMS</h1>
-                            <h1>QUANTITY</h1>
-                            <h1>PRICE</h1>
-                            <h1>TOTAL</h1>
-                        </div>
-                        {cartItems && cartItems.map((item) => <CartItem key={item.itemId} item={item} addItem={addItem} deleteItem={deleteItem} />)}
-                    </ul>
-                    <div className={styles.priceContainer}>
-                        <div className={styles.subtotal}>
-                            <h3>Subtotal</h3>
-                            <h3>USD {totalPrice}</h3>
-                        </div>
-                        <div className={styles.total}>
-                            <h1>Total</h1>
-                            <h1>USD {totalPrice}</h1>
-                        </div>
-                    </div>
-                </>}
-        </section>
-    );
-}
+    // }]);
 
-export default CartPage;
+    const [cartItemsState, dispatch] = useReducer(cartReducer, {
+        items: [],
+        totalPrice: 0,
+    });
+
+    const addItem = (item, itemCount = false) => {
+        console.log(item);
+        dispatch({ type: 'addItem', item: item, itemCount: itemCount });
+    };
+
+    const deleteItem = (item, deleteType = false) => {
+        dispatch({ type: 'deleteItem', item: item, deleteType: deleteType });
+    };
+
+    const cartContext = {
+        cartItems: cartItemsState.items,
+        totalPrice: cartItemsState.totalPrice,
+    };
+    return (
+        <CartContext.Provider value={{ cartContext, addItem, deleteItem }}>
+            {children}
+        </CartContext.Provider>
+    );
+};
+
+export function UseCartContext() {
+    return useContext(CartContext);
+};

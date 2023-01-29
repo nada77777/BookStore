@@ -1,0 +1,64 @@
+.cartPage {
+    margin-top: var(--space-max);
+}
+
+.itemContainer {}
+
+.itemContainer .itemTitle {
+    display: flex;
+    align-items: center;
+    padding: var(--space-small) 0;
+    font-size: var(--size-small);
+    border-bottom: 1px solid #eaeaea;
+}
+
+
+.itemContainer .itemTitle h1 {
+    width: 15%;
+    text-align: center;
+}
+
+.itemContainer .itemTitle h1:first-child {
+    width: 55%;
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.priceContainer .subtotal {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.priceContainer .subtotal {
+    color: #665b5b
+}
+
+.priceContainer .subtotal,
+.priceContainer .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    padding: var(--space-small);
+    font-size: var(--size-small);
+}
+
+.cartNotice {
+    text-align: center;
+    margin: var(--space-max) 0;
+}
+
+
+/* <div className={styles.priceContainer}>
+<div className={styles.subtotal}>
+    <h2>Subtotal</h2>
+    <h2>USD 257</h2>
+</div>
+<div className={styles.total}>
+    <h1>Total</h1>
+    <h1>USD 257</h1>
+</div>
+</div> */

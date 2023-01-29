@@ -16,7 +16,7 @@ const InfoTable = (props) => {
             <tbody>
                 <tr>
                     <td>{props.item.title}</td>
-                    <td>{props.item.author}</td>
+                    <td>{props.item.author || '없음'}</td>
                     <td>{props.item.isbn}</td>
                     <td>{props.item.categoryName}</td>
                     <td>{props.item.priceStandard}</td>

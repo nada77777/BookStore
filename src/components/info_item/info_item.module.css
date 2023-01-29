@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-basis: 80%;
 }
 
 /* .info .title,
@@ -19,11 +20,13 @@
 .infoItemImg {
     margin-right: var(--space-max);
     width: 190px;
-    border: 1px solid black;
+    flex-basis: 20%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .infoItemImg img {
     display: block;
+    width: 100%;
 }
 
 
@@ -49,6 +52,7 @@
 
 .info .price .priceStandard {
     text-decoration: line-through;
+    margin-right: var(--space-small);
 }
 
 .info .price .infoPriceButton {
@@ -68,15 +72,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 1px solid #a0a0a0;
     font-size: 25px;
 }
 
 .buttons .number {
-    padding: var(--space-medium);
+    padding: var(--space-small) calc(var(--space-big) + 10px);
     border-radius: 25px;
     margin: 0 var(--space-min);
     border: 1px solid black;

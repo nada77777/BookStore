@@ -1,9 +1,21 @@
 import React from 'react';
+import { useState } from 'react';
 import CartButton from '../../UI/buttons/cart_button';
 import PriceButton from '../../UI/buttons/price_button';
 import styles from './info_item.module.css';
 const InfoItem = (props) => {
+    const [count, setCount] = useState(0);
 
+    const plusCount = () => {
+        setCount((prev) => prev + 1);
+    };
+
+    const minusCount = () => {
+        if (count === 0) {
+            return;
+        }
+        setCount((prev) => prev - 1);
+    };
 
     return (
         <div className={styles.infoItem}>
@@ -12,19 +24,19 @@ const InfoItem = (props) => {
             </div>
             <div className={styles.info}>
                 <h1 className={styles.title}>{props.item.title}</h1>
-                <p className={styles.author}>Author: {props.item.author}</p>
+                <p className={styles.author}>Author: {props.item.author || '없음'}</p>
                 <div className={styles.price}>
-                    <span className={styles.priceStandard}>{props.item.priceStandard}</span>
+                    <span className={styles.priceStandard}>₩ {props.item.priceStandard}</span>
                     <PriceButton price={props.item.priceSales} styles={styles.infoPriceButton} />
                 </div>
                 <pre className={styles.description}>
                     {props.item.description}
                 </pre>
                 <div className={styles.buttons}>
-                    <button className={styles.minus}>-</button>
-                    <button className={styles.number}>number</button>
-                    <button className={styles.plus}>+</button>
-                    <CartButton styles={styles.infoCartButton} />
+                    <button onClick={minusCount} className={styles.minus}>-</button>
+                    <button className={styles.number}>{count}</button>
+                    <button onClick={plusCount} className={styles.plus}>+</button>
+                    <CartButton item={props.item} itemCount={count} styles={styles.infoCartButton} />
                 </div>
             </div>
 

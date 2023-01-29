@@ -5,6 +5,7 @@ footer {
     background-color: var(--basic-color);
     color: white;
     padding: var(--space-big) var(--space-max);
+    margin-top: var(--space-max);
 }
 
 footer .logo {
