@@ -3,7 +3,7 @@ import styles from './cart_item.module.css';
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 import { MdClose } from 'react-icons/md';
 const CartItem = (props) => {
-    console.log(props.addItem);
+
     return (
         <div className={styles.cartItem}>
             <div className={styles.imgAndTitle}>
@@ -17,8 +17,7 @@ const CartItem = (props) => {
                 <span onClick={() => props.deleteItem(props.item)}><BsChevronDown /></span>
             </div>
             <span className={styles.price}>{props.item.priceSales}</span>
-            <span className={styles.total}>total</span>
-            <span onClick={() => props.deleteItem(props.item, 'deleteAll')} className={styles.deleteBtn}><MdClose /></span>
+            <span className={styles.deleteBtn} onClick={() => props.deleteItem(props.item, 'deleteAll')}><MdClose /></span>
         </div>
     );
 };

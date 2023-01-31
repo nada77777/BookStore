@@ -5,9 +5,11 @@ import PriceButton from '../../UI/buttons/price_button';
 import styles from './info_item.module.css';
 const InfoItem = (props) => {
     const [count, setCount] = useState(0);
+    const [cartItem, setCartItem] = useState({});
 
     const plusCount = () => {
         setCount((prev) => prev + 1);
+        setCartItem({ ...props.item, count: count });
     };
 
     const minusCount = () => {
@@ -15,6 +17,7 @@ const InfoItem = (props) => {
             return;
         }
         setCount((prev) => prev - 1);
+        setCartItem({ ...props.item, count: count });
     };
 
     return (
@@ -36,10 +39,9 @@ const InfoItem = (props) => {
                     <button onClick={minusCount} className={styles.minus}>-</button>
                     <button className={styles.number}>{count}</button>
                     <button onClick={plusCount} className={styles.plus}>+</button>
-                    <CartButton item={props.item} itemCount={count} styles={styles.infoCartButton} />
+                    <CartButton cartItem={cartItem} item={props.item} itemCount={count} styles={styles.infoCartButton} />
                 </div>
             </div>
-
         </div>
     );
 };

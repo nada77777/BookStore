@@ -29,11 +29,3 @@ const InfoTable = (props) => {
 }
 
 export default InfoTable;
-
-
-// title,
-//     author,
-//     isbn,
-//     cate,
-//     price,
-//     date,

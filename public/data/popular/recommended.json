@@ -14,7 +14,7 @@
     "searchCategoryName": "국내도서",
     "returnCode": "000",
     "returnMessage": "정상",
-    "items": [
+    "item": [
         {
             "itemId": 356432433,
             "title": "김현승 시 세계 심층 연구",

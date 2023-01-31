@@ -26,20 +26,19 @@
 
 .cartItem .counter span {
     margin: 0 var(--space-min);
+    cursor: pointer;
 }
 
 
 .cartItem .counter,
 .cartItem .price,
-.cartItem .total {
+.cartItem .deleteBtn {
     text-align: center;
     width: 15%;
 }
 
 .cartItem .deleteBtn {
-    /* position: absolute;
-    top: 1px;
-    right: 1px; */
     color: black;
     font-size: var(--size-medium);
+    cursor: pointer;
 }

@@ -1,0 +1,19 @@
+.form {
+    position: relative;
+}
+
+.form input {
+    padding: 5px 0;
+    border-radius: 12px;
+    width: 300%;
+    padding-left: 30px;
+    border: 1px solid #eaeaea;
+}
+
+
+.form .searchIcon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}

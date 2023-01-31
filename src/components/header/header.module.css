@@ -11,31 +11,19 @@ header {
     align-items: center;
     padding: 15px 0;
     border-bottom: 1px solid rgb(0 0 0 / 0.2);
-    box-shadow: 0 3px 10px rgb(0 0 0 / 7%);
+    box-shadow: 0 5px 5px -5px #333;
 }
 
 .headerTop .logo {
     display: flex;
     align-items: center;
     font-size: var(--size-max);
+    cursor: pointer;
 }
 
-.headerTop .form {
-    position: relative;
-}
-
-.headerTop input {
-    padding: 5px 0;
-    border-radius: 12px;
-    width: 350%;
-    border: 1px solid #eaeaea;
-}
-
-.headerTop .searchIcon {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
+.headerTop .logoIcon {
+    color: #1b8bcbd9;
+    margin: 0 var(--space-min);
 }
 
 .headerTop .icons {
@@ -45,6 +33,7 @@ header {
 
 .headerTop .icons span {
     font-size: var(--size-max);
+    cursor: pointer;
 }
 
 .headerBottom {
@@ -63,27 +52,6 @@ header {
     font-weight: var(--weight-bold);
 }
 
-
-
-/* <header>
-<div className={styles.headerTop}>
-    <span className={styles.logo}><ImBook /> BOOKSHOP</span>
-    <form className={styles.form}>
-        <h1><AiOutlineSearch /></h1>
-        <input type="text" />
-    </form>
-    <div className={styles.icons}>
-        <span><BsCart /></span>
-        <span><AiOutlineUser /></span>
-    </div>
-</div>
-<div className={styles.headerBottom}>
-    <nav className={styles.nav}>
-        <li><a href=" ">Home</a></li>
-        <li><a href=" ">Books</a></li>
-        <li><a href=" ">Magazines</a></li>
-        <li><a href=" ">Album</a></li>
-        <li><a href=" ">Recommended</a></li>
-    </nav>
-</div>
-</header> */
+.headerBottom .nav li a:hover {
+    color: #1b8bcbd9;
+}

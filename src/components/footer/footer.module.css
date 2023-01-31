@@ -46,29 +46,3 @@ footer .info ul li a {
     color: white;
     display: block;
 }
-
-
-
-
-
-
-/* <footer>
-<div className={styles.title}>
-    <span className={styles.logo}><ImBook /> BOOKSHOP</span>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Nam atque, modi sunt, aliquam cumque hic dolorem delectus,
-        fugit temporibus repellat reprehenderit molestias quasi id!
-        Facere explicabo voluptate officiis quam ipsa!
-    </p>
-</div>
-<div className={styles.info}>
-    <span><GrCircleInformation />informations</span>
-    <ul>
-        <li><a href=" ">About Us</a></li>
-        <li><a href=" ">Contact Us</a></li>
-        <li><a href=" ">My Account</a></li>
-        <li><a href=" ">FAQ</a></li>
-        <li><a href=" ">Blog</a></li>
-    </ul>
-</div>
-</footer> */

@@ -14,7 +14,7 @@
     "searchCategoryName": "국내도서",
     "returnCode": "000",
     "returnMessage": "정상",
-    "items": [
+    "item": [
         {
             "itemId": 356522531,
             "title": "세이노의 가르침",
