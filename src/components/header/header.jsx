@@ -7,13 +7,15 @@ import { useNavigate } from 'react-router-dom';
 import SearchForm from '../search_form/search_form';
 const Header = (props) => {
     const navigate = useNavigate();
+
     const onClick = (event) => {
         event.preventDefault();
+
         if (event.target.name === 'home') {
             navigate('/', { state: { name: event.target.name } });
             return
         };
-        navigate(`/bookList`, { state: { name: event.target.name } });
+        navigate(`/bookList`, { state: { name: event.target.name } }); //bookList로 이동 시 불러올 데이터 경로 지정 위해 a태그 name 활용
     }
     return (
         <header>

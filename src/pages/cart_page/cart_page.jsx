@@ -5,8 +5,8 @@ import { UseCartContext } from '../../context/cart_context';
 
 const CartPage = (props) => {
 
-    const { cartContext: { cartItems, totalPrice }, addItem, deleteItem } = UseCartContext();
-    console.log(totalPrice);
+    const { cartContext: { cartItems, totalPrice }, addItem, deleteItem } = UseCartContext(); //카트 아이템, 가격, 수량 조정 위해 Context 불러오기  
+
     return (
         <section className={styles.cartPage}>
             <div className={styles.cartList}>
@@ -23,7 +23,6 @@ const CartPage = (props) => {
                             </div>
                             {cartItems && cartItems.map((item) => <CartItem key={item.itemId} item={item} addItem={addItem} deleteItem={deleteItem} />)}
                         </ul>
-
                     </>}
             </div>
             <div className={styles.priceContainer}>

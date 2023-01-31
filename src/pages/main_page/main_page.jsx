@@ -6,8 +6,8 @@ const MainPage = (props) => {
 
     return (
         <section className={styles.mainPage}>
-            <BookItems title='CURRENT BESTSELLER' dataType='bestSeller' />
-            <BookItems title='RECOMMEND' dataType='recommend' />
+            <BookItems title='CURRENT BESTSELLER' dataURL='bestSeller' />
+            <BookItems title='RECOMMEND' dataURL='recommend' />
         </section>
     );
 }

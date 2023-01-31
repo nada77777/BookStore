@@ -7,15 +7,15 @@ const ListPage = (props) => {
     const [bookItems, setBookItems] = useState([]);
 
     const location = useLocation().state;
-    const pageTitle = location.name;
-    const getdata = new GetData();
+    const pageTitle = location.name; //nav 클릭 시 받아온 location으로 페이지 title 설정
+    const getdata = new GetData(); //GetData 클래스의 getBookItems 사용해 data 가져오기
 
     useEffect(() => {
         if (pageTitle === 'search result') {
-            setBookItems(location.item);
+            setBookItems(location.item); //???????????????????
             return
         }
-        getdata.getBookItems(pageTitle)//
+        getdata.getBookItems(pageTitle)// 받아온 pageTitle 사용해 dataURL 설정
             .then(result => setBookItems(result.item));
     }, [pageTitle]);
 

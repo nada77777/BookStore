@@ -1,12 +1,12 @@
 export const cartReducer = (state, action) => {
     switch (action.type) {
         case 'addItem': {
-            const cartItemIndex = state.items.findIndex((item) => item.itemId === action.item.itemId);
+            const cartItemIndex = state.items.findIndex((item) => item.itemId === action.item.itemId); //카트에 이미 존재하는 item 식별 위해 findIndex 사용
             const cartItem = state.items[cartItemIndex];
 
             if (cartItem) {
-                const updatedCartItem = action.itemCount ? { ...cartItem, count: cartItem.count + action.itemCount, price: cartItem.priceSales * action.itemCount }
-                    : { ...cartItem, count: cartItem.count + 1, price: cartItem.priceSales };
+                const updatedCartItem = action.itemCount ? { ...cartItem, count: cartItem.count + action.itemCount, price: cartItem.priceSales * action.itemCount } //infoItem 컴포넌트에서 'addItem' 사용 시
+                    : { ...cartItem, count: cartItem.count + 1, price: cartItem.priceSales }; // cartPage 컴포넌트에서 사용 시
                 const updatedCartItems = [...state.items];
                 updatedCartItems[cartItemIndex] = updatedCartItem;
                 return { items: updatedCartItems, totalPrice: state.totalPrice + updatedCartItem.price };

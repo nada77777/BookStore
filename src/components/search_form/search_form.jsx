@@ -9,17 +9,17 @@ const SearchForm = (props) => {
     const [keyword, setKeyword] = useState('');
 
     const navigate = useNavigate();
-    const inputRef = useRef();
-    const getData = new GetData();
+    const inputRef = useRef(); // input에서 검색 키워드 읽기 위해 useRef 사용
+    const getData = new GetData();// GetData 클래스의 searchBookItems 사용해 data 가져오기
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if (keyword === '') {
+        if (keyword === '') { //검색 키워드 공백 시 함수 종료
             return
         }
         getData.searchBookItems(keyword)//
             .then(item => navigate('/bookList', { state: { name: 'search result', item: item } }));
-        setKeyword('');
+        setKeyword(''); //검색 키워드 초기화
     };
 
     const onChange = () => {
