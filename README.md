@@ -15,3 +15,6 @@
 
 * 카트 화면
 <img width="100%" src="book_cart.png"/>
+
+* 카트 - 기능 구현
+<img width="100%" src="bookstore_cart.gif"/>
